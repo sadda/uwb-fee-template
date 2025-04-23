@@ -82,6 +82,15 @@
 \newcommand{\web}[1]{
 	\renewcommand{\varweb}{#1}}
 
+\newcommand{\transition}[1]{
+    \begin{frame}
+        \begin{tikzpicture}[overlay, remember picture, shift={(current page.south west)}]
+        \draw [fill=fel_blue] (0,0) -- (0, \paperheight) -- (\paperwidth, \paperheight) -- (\paperwidth, 0) -- (0,0);
+        \end{tikzpicture}
+        \centering
+        \Huge{\textbf{\uppercase{#1}}}
+    \end{frame}
+    }        
 
 \mode
 <all>
