@@ -1,0 +1,32 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+%
+% Copyright 2023 by T. Kosan, V. Smidl, fel.zcu.cz
+%
+
+\mode<presentation>
+
+% just drop sidebar
+\defbeamertemplate*{sidebar right}{rice theme}
+{ }
+
+% add pages to footline
+\setbeamertemplate{footline}{
+    \begin{beamercolorbox}[wd=0.86\paperwidth,ht=2.25ex,dp=1ex,right]{page number}
+        \ifnum\insertframenumber<\inserttotalframenumber
+        \ifnum\insertframenumber>1
+        {\insertframenumber/\inserttotalframenumber}
+        \fi
+        \fi
+    \end{beamercolorbox}
+    \vspace{1.4em}
+}
+
+\mode
+<all>

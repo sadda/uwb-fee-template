@@ -1,0 +1,79 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+%
+% Copyright 2023 by T. Kosan, V. Smidl, fel.zcu.cz
+%
+
+\mode<presentation>
+
+% blue color of FEL
+\definecolor{fel_blue}{rgb}{0,0.505,0.776} %{0.2667,0.4627,0.6039} %68,118,154
+
+% set color profiles
+\setbeamercolor{structure}{fg=fel_blue}
+\setbeamercolor{palette primary}{use=structure,fg=fel_blue}
+\setbeamercolor{palette secondary}{use=structure,fg=black,bg=structure.fg!25!white}
+\setbeamercolor{palette tertiary}{use=structure,fg=black,bg=structure.fg!30!white}
+\setbeamercolor{palette quaternary}{use=structure,fg=black,bg=structure.fg!35!white}
+\setbeamercolor*{titlelike}{parent=palette primary}
+
+% setup colors for title, author, etc.
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{subtitle}{fg=fel_blue}
+\setbeamercolor{author}{fg=black}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{framesubtitle}{fg=fel_blue}
+\setbeamercolor{footline}{fg=fel_blue}
+
+% set font sizes and/or family
+\setbeamerfont{title}{size=\fontsize{20}{17}, series=\bfseries}
+\setbeamerfont{titlelast}{size=\fontsize{17}{15}, series=\bfseries}
+\setbeamerfont{thanks}{series=\bfseries}
+\setbeamerfont{authorlast}{series=\bfseries}
+\setbeamerfont{frametitle}{size=\fontsize{20}{17}, series=\bfseries}
+\setbeamerfont{footline}{size=\fontsize{7}{8}}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\fontsize{12}{14}}
+\setbeamerfont{itemize/enumerate subbody}{size=\fontsize{12}{14}}
+
+% this is item mark for itemize block
+\def\itemmark{
+    \tikz{
+        \def\width{0.12}
+        \def\height{0.3}
+        \def\shift{0.03}
+        \draw[thick, draw=white, fill=fel_blue, yshift=0.12em] (-0.2em,0) --++ (\width,\shift) --++ (0,\height + \shift) --++ (-\width,-\shift) -- cycle;
+    }
+}
+
+% define beamer templates for item bullets
+\defbeamertemplate{itemize item}{ii}{\tikz{
+    \itemmark
+}}
+
+\defbeamertemplate{itemize subitem}{iii}{\tikz{
+    \itemmark
+}}
+
+\defbeamertemplate{itemize subsubitem}{iiii}{\tikz{
+    \itemmark
+}}
+
+% use a new defined item bullets
+\setbeamertemplate{itemize item}[ii]
+\setbeamertemplate{itemize subitem}[iii]
+\setbeamertemplate{itemize subsubitem}[iiii]
+
+% set indent of each itemize level
+\setbeamertemplate{itemize/enumerate body begin}{\setlength{\leftmargini}{0.3cm}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\setlength{\leftmarginii}{0.6cm}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{\setlength{\leftmarginiii}{0.6cm}}
+
+\mode
+<all>

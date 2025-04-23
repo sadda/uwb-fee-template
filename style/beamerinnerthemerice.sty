@@ -1,0 +1,136 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+%
+% Copyright 2023 by T. Kosan, V. Smidl, fel.zcu.cz
+%
+
+% define empty string
+\def\empty{}
+
+\mode<presentation>
+
+% render background with help of Tikz
+\setbeamertemplate{background}{
+	\begin{tikzpicture}
+		% background for first page
+		\ifnum\thepage=1\relax%
+			\useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ;
+			\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{title_background}} ;
+		\else
+			% background for last page
+			\ifnum\insertframenumber=\inserttotalframenumber\relax%
+				\useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ;
+				\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{last_background}} ;
+            % normal page
+			\else
+				\useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ;
+				\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{normal_background}} ;
+			\fi
+		\fi
+	\end{tikzpicture}
+}
+
+% normal frame behavior
+\defbeamertemplate*{frametitle}{rice theme}[1][left]
+{
+    \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+    \@tempdima=\textwidth%
+    \advance\@tempdima by\beamer@leftmargin%
+    \advance\@tempdima by\beamer@rightmargin%
+    % insert title and subtitle
+    \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
+        \usebeamerfont{frametitle}%
+        \strut\insertframetitle\vskip-1ex\strut\par%
+        {%
+            \ifx\insertframesubtitle\@empty%
+                \vskip-5ex
+            \else%
+                {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+                \vskip-5ex
+            \fi
+        }%
+        %\vskip-1ex%
+        %\if@tempswa\else\vskip-5ex\fi% set inside beamercolorbox... evil here...
+    \end{beamercolorbox}%
+    %\vskip-1.4ex%
+    \leavevmode
+    %\hbox{
+    %    \hskip\beamer@leftmargin
+    %}
+}
+
+% title page behavior
+\defbeamertemplate*{title page}{rice theme}[1][left]
+{
+	\vspace{-\fill}
+	\nointerlineskip%
+  	\@tempdima=\textwidth%
+  	\advance\@tempdima by\beamer@leftmargin%
+  	\advance\@tempdima by\beamer@rightmargin%
+	\leavevmode
+
+        \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
+           {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
+ 		\end{beamercolorbox}
+
+        \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
+  		\ifx\insertsubtitle\@empty%
+            \else%
+            %\vskip1.25ex%
+            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+        \fi%
+ 		\end{beamercolorbox}
+
+ %       \vskip1em\par
+%		\vfill\par
+        \begin{beamercolorbox}[sep=5.5mm,#1,wd=\the\@tempdima]{frametitle}
+		{\usebeamerfont{author}\usebeamercolor[fg]{author}{\insertauthor\par}}
+	\end{beamercolorbox}
+}
+
+% this is last page template
+\defbeamertemplate*{last page}{rice theme}[1][left]
+{
+	\vspace{-\fill}
+    \nointerlineskip%
+    \@tempdima=\textwidth%
+    \advance\@tempdima by\beamer@leftmargin%
+    \advance\@tempdima by\beamer@rightmargin%
+    \leavevmode
+
+    \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
+        % fixed first empty point
+        {\usebeamerfont{titlelast}{\usebeamercolor[fg]{title}\inserttitle}\par}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
+        {\usebeamerfont{thanks}\usebeamercolor[fg]{subtitle}
+                \ifdef{\cslang}{Děkuji za pozornost}{Thank you for your attention}\par}%
+
+        \vspace{1ex}
+        {\usebeamerfont{authorlast}\usebeamercolor[fg]{author}\insertauthor\par}%
+
+        {\usebeamerfont{author}\usebeamercolor[fg]{author}\varphone\par}%
+
+        {\usebeamerfont{author}\usebeamercolor[fg]{author}E-mail: \varmail\par}%
+
+        {\usebeamerfont{author}\usebeamercolor[fg]{author}WWW: https://fel.zcu.cz\par}%
+
+    \end{beamercolorbox}
+}
+
+% this does not work :(
+\defbeamertemplate*{toc}{rice theme}[1][top]
+{
+    \frametitle{\ifdef{\cslang}{Obsah}{Table of Contents}}
+    \tableofcontents[]
+}
+
+
+\mode
+<all>

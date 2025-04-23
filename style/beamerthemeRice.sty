@@ -1,0 +1,83 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+%
+% Copyright 2023 by T. Kosan, V. Smidl, fel.zcu.cz
+%
+
+\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/theme/beamerthemeRice.sty,v 1.5 2007/01/28 20:48:30 tantau Exp $
+
+
+\mode<presentation>
+
+%\RequirePackage[absolute, overlay]{textpos}
+%\setlength{\TPHorizModule}{1mm}
+%\setlength{\TPVertModule}{1mm}
+%\RequirePackage{setspace}
+
+\setbeamertemplate{frametitle}[default][left]
+
+% we have a templates in style directory, we must use \usepackage
+%\useoutertheme{rice}
+%\useinnertheme{rice}
+%\usecolortheme{rice}
+\usepackage{./style/beamerouterthemerice}
+\usepackage{./style/beamerinnerthemerice}
+\usepackage{./style/beamercolorthemerice}
+
+% setup page margins
+\setbeamersize{text margin left=7mm, text margin right=1em}
+\setbeamersize{sidebar width right=1em}
+
+% load proper backgrounds for presentation CS/EN and FEL/RICE
+\ifdef{\cslang}{
+    \ifdef{\ricemode}{
+        % Background for first page
+        \pgfdeclareimage[width=\paperwidth, page=1]{title_background}{media/RICE_CZ.pdf}
+        % normal page background
+        \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=2]{normal_background}{media/RICE_CZ.pdf}
+        % Background for last page
+        \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=3]{last_background}{media/RICE_CZ.pdf}
+    }{
+        % Background for first page
+        \pgfdeclareimage[width=\paperwidth, page=1]{title_background}{media/FEL_CZ.pdf}
+        % normal page background
+        \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=2]{normal_background}{media/FEL_CZ.pdf}
+        % Background for last page
+        \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=3]{last_background}{media/FEL_CZ.pdf}
+    }
+}{
+    \ifdef{\ricemode}{
+        % Background for first page
+        \pgfdeclareimage[width=\paperwidth, page=1]{title_background}{media/RICE_EN.pdf}
+        % normal page background
+        \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=2]{normal_background}{media/RICE_EN.pdf}
+        % Background for last page
+        \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=3]{last_background}{media/RICE_EN.pdf}
+    }{
+        % Background for first page
+        \pgfdeclareimage[width=\paperwidth, page=1]{title_background}{media/FEL_EN.pdf}
+        % normal page background
+        \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=2]{normal_background}{media/FEL_EN.pdf}
+        % Background for last page
+        \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=3]{last_background}{media/FEL_EN.pdf}
+    }
+}
+
+% mail variable
+\newcommand{\varmail}{}
+\newcommand{\mail}[1]{
+	\renewcommand{\varmail}{#1}}
+% telephone variable
+\newcommand{\varphone}{}
+\newcommand{\phone}[1]{
+	\renewcommand{\varphone}{#1}}
+
+
+\mode
+<all>
