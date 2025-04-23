@@ -29,9 +29,11 @@
 				\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{last_background}} ;
             % normal page
 			\else
-				\useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ;
-				\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{normal_background}} ;
-			\fi
+                \ifdef{\nologo}{}{
+    				\useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ;
+    				\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{normal_background}} ;
+                }
+            \fi
 		\fi
 	\end{tikzpicture}
 }
@@ -90,7 +92,7 @@
  %       \vskip1em\par
 %		\vfill\par
         \begin{beamercolorbox}[sep=5.5mm,#1,wd=\the\@tempdima]{frametitle}
-		{\usebeamerfont{author}\usebeamercolor[fg]{author}{\insertauthor\par}}
+		{\usebeamerfont{author}\usebeamercolor[fg]{author}{\insertauthor\par} {\vardate\par}}
 	\end{beamercolorbox}
 }
 
@@ -119,7 +121,7 @@
 
         {\usebeamerfont{author}\usebeamercolor[fg]{author}E-mail: \varmail\par}%
 
-        {\usebeamerfont{author}\usebeamercolor[fg]{author}WWW: https://fel.zcu.cz\par}%
+        {\usebeamerfont{author}\usebeamercolor[fg]{author}WWW: \varweb\par}%
 
     \end{beamercolorbox}
 }
