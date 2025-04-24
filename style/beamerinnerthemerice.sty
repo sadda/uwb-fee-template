@@ -45,14 +45,8 @@
                 \vskip-4.5ex
             \fi
         }%
-        %\vskip-1ex%
-        %\if@tempswa\else\vskip-5ex\fi% set inside beamercolorbox... evil here...
     \end{beamercolorbox}%
-    %\vskip-1.4ex%
     \leavevmode
-    %\hbox{
-    %    \hskip\beamer@leftmargin
-    %}
 }
 
 % title page behavior
@@ -72,13 +66,10 @@
         \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
   		\ifx\insertsubtitle\@empty%
             \else%
-            %\vskip1.25ex%
             {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
         \fi%
  		\end{beamercolorbox}
 
- %       \vskip1em\par
-%		\vfill\par
         \begin{beamercolorbox}[sep=5.5mm,#1,wd=\the\@tempdima]{frametitle}
 		{\usebeamerfont{author}\usebeamercolor[fg]{author}{\insertauthor\par} {\vardate\par}}
 	\end{beamercolorbox}
@@ -117,7 +108,7 @@
     \end{beamercolorbox}
 }
 
-% this does not work :(
+% TODO: this does not work :(
 \defbeamertemplate*{toc}{rice theme}[1][top]
 {
     \frametitle{\ifdef{\cslang}{Obsah}{Table of Contents}}
@@ -125,5 +116,4 @@
 }
 
 
-\mode
-<all>
+\mode<all>

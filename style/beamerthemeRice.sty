@@ -1,19 +1,8 @@
-\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/theme/beamerthemeRice.sty,v 1.5 2007/01/28 20:48:30 tantau Exp $
-
-
 \mode<presentation>
-
-%\RequirePackage[absolute, overlay]{textpos}
-%\setlength{\TPHorizModule}{1mm}
-%\setlength{\TPVertModule}{1mm}
-%\RequirePackage{setspace}
 
 \setbeamertemplate{frametitle}[default][left]
 
 % we have a templates in style directory, we must use \usepackage
-%\useoutertheme{rice}
-%\useinnertheme{rice}
-%\usecolortheme{rice}
 \usepackage{./style/beamerouterthemerice}
 \usepackage{./style/beamerinnerthemerice}
 \usepackage{./style/beamercolorthemerice}
@@ -22,58 +11,40 @@
 \setbeamersize{text margin left=7mm, text margin right=1em}
 \setbeamersize{sidebar width right=1em}
 
-% load proper backgrounds for presentation CS/EN and FEL/RICE
+% load proper backgrounds first/normal/last pages for presentation CS/EN and FEL/RICE
 \ifdef{\cslang}{
     \ifdef{\ricemode}{
-        % Background for first page
         \pgfdeclareimage[width=\paperwidth, page=1]{title_background}{media/RICE_CZ.pdf}
-        % normal page background
         \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=2]{normal_background}{media/RICE_CZ.pdf}
-        % Background for last page
         \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=3]{last_background}{media/RICE_CZ.pdf}
     }{
-        % Background for first page
         \pgfdeclareimage[width=\paperwidth, page=1]{title_background}{media/FEL_CZ.pdf}
-        % normal page background
         \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=2]{normal_background}{media/FEL_CZ.pdf}
-        % Background for last page
         \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=3]{last_background}{media/FEL_CZ.pdf}
     }
 }{
     \ifdef{\ricemode}{
-        % Background for first page
         \pgfdeclareimage[width=\paperwidth, page=1]{title_background}{media/RICE_EN.pdf}
-        % normal page background
         \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=2]{normal_background}{media/RICE_EN.pdf}
-        % Background for last page
         \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=3]{last_background}{media/RICE_EN.pdf}
     }{
-        % Background for first page
         \pgfdeclareimage[width=\paperwidth, page=1]{title_background}{media/FEL_EN.pdf}
-        % normal page background
         \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=2]{normal_background}{media/FEL_EN.pdf}
-        % Background for last page
         \pgfdeclareimage[height=\paperheight, width=\paperwidth, page=3]{last_background}{media/FEL_EN.pdf}
     }
 }
 
-% date variable
+% variables date, mail, phone and web
 \newcommand{\vardate}{}
-\renewcommand{\date}[1]{
-	\renewcommand{\vardate}{#1}}
-% mail variable
+\renewcommand{\date}[1]{\renewcommand{\vardate}{#1}}
 \newcommand{\varmail}{}
-\newcommand{\mail}[1]{
-	\renewcommand{\varmail}{#1}}
-% telephone variable
+\newcommand{\mail}[1]{\renewcommand{\varmail}{#1}}
 \newcommand{\varphone}{}
-\newcommand{\phone}[1]{
-	\renewcommand{\varphone}{#1}}
-% web variable
+\newcommand{\phone}[1]{\renewcommand{\varphone}{#1}}
 \newcommand{\varweb}{}
-\newcommand{\web}[1]{
-	\renewcommand{\varweb}{#1}}
+\newcommand{\web}[1]{\renewcommand{\varweb}{#1}}
 
+% transition slide
 \newcommand{\transition}[1]{
     \begin{frame}
         \begin{tikzpicture}[overlay, remember picture, shift={(current page.south west)}]
@@ -84,5 +55,4 @@
     \end{frame}
     }        
 
-\mode
-<all>
+\mode<all>
