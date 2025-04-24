@@ -1,122 +1,36 @@
-% !TeX program = xelatex
+% !TeX program = pdflatex
 % !TEX encoding = UTF-8
-
-% MODIFIED by Jonathan Kew, 2008-07-06
-% MODIFIED by Tomas Kosan, Vaclav Smidl, 2023-04-29
 
 \documentclass[12pt, aspectratio=169]{beamer}
 
-\usepackage{fontspec}
-\setmainfont{Liberation Sans Narrow}
-
-% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
-%
-% In principle, this file can be redistributed and/or modified under
-% the terms of the GNU Public License, version 2.
-%
-% However, this file is supposed to be a template to be modified
-% for your own needs. For this reason, if you use this file as a
-% template and not specifically distribute it as part of a another
-% package/program, I grant the extra permission to freely copy and
-% modify this file as you see fit and even to delete this copyright
-% notice.
 \geometry{papersize={169.5mm,95.5mm}}
+\mode<presentation>{\usepackage{./style/beamerthemeRice}}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage[sfdefault]{roboto}
+\usepackage[T1]{fontenc}
 \usepackage[czech, english]{babel}
 \usepackage[utf8]{inputenc}
-% T.K. added
-% support for graphics
 \usepackage{graphicx}
-% import of eps, pdflatex must be called as: pdflatex -shell-escape
-% to allow eps to pdf autoconvert
-\usepackage{epstopdf}
-% setup path where graphic is
-\graphicspath{{images/}}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{pgfpages}
-
-% TIKZ/PGF setup
 \usepackage{tikz}
-\usepackage{circuitikz}
-\usepackage{textcomp}
-\usepackage{verbatim}
-\usepackage{pgfplots}
-\usetikzlibrary{positioning}
-\usetikzlibrary{automata}
-\usetikzlibrary{arrows, shapes}
-\usetikzlibrary{decorations.markings}
-\usetikzlibrary{calc}
-\usetikzlibrary{shapes.arrows,decorations,scopes}
 
-\usetikzlibrary{shapes.geometric}
-\usetikzlibrary{shapes.arrows}
-\usepackage{array}
-
-\hypersetup{pdfstartview={Fit}} % fits the presentation to the window when first displayed
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Start with user settings
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% setup language, uncomment to use czech language in slide backgrounds
-% also changes Thanks to string to czech
+% Uncomment to use Czech/English in slide backgrounds
 %\def\cslang{}
 
-% setup department, uncomment when RICE instead of FEL has to be used
-%\def\ricemode{}
+% Uncomment to use FEL/RICE background
+\def\ricemode{}
 
-% load beamer template
-\mode<presentation>
-{
-    \usepackage{./style/beamerthemeRice}
-    \setbeamercovered{transparent}
-}
+% Uncomment to remove the bottom-left FEL text
+%\def\nologo{}
 
-% Setup title
-\title[] % (optional, use only with long paper titles)
-{
-	LOREM IPSUM DOLOR SIT CONSECTETUER ADIPISCING
-}
-
-% insert subtitle or leave empty
-\subtitle{
-    % ifdef can be used to detect language
-    \ifdef{\cslang}
-        % Czech language is defined
-        {Vložte pouze pokud prezentace má podnadpis}
-        % we should use English
-        {Include Only If Paper Has a Subtitle}
-}
-
-% setup author
-\author[] % (optional, use only with lots of authors)
-{
-    % ifdef can be used to detect language
-    \ifdef{\cslang}
-    % Czech language is defined
-    {Autor}
-    % we should use English
-    {Author}
-}
-
-% date  - not used ?
-\date[]{2023}
-
-% setup email, phone etc...
+% Setup metadata, all but title and author may be commented out
+\title[]{LOREM IPSUM DOLOR SIT CONSECTETUER ADIPISCING}
+\author{Author}
+\date{April 24, 2025}
+\subtitle{Include Only If Paper Has a Subtitle}
 \mail{kosan@rice.zcu.cz}
 \phone{+420 37763 4163}
-
-% If you wish to uncover everything in a step-wise fashion, uncomment
-% the following command:
-
-%\beamerdefaultoverlayspecification{<+->}
-
-% uncomment if you want to add some notes to your presentation
-% they will be displayed on second screen
-% then use pympress to show presentation
-%\setbeameroption{show notes on second screen=right}
+\web{www.myweb.com}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -126,25 +40,19 @@
 
 \begin{document}
 
-% disable navigation bar
-\setbeamertemplate{navigation symbols}{}
-
-% first render title page
+% Title page
 \begin{frame}
 	\maketitle
 \end{frame}
 
-% page with index of presentation - optional
-% it will automatically change its title according to language
-% comment out whole frame if not needed
+% Optional slide with table of content
 \begin{frame}
     \usebeamertemplate{toc}
-    \note{note text}
-
 \end{frame}
 
-% Here yours presentation begins
-% Normal page with items and aligned to top
+\transition{One-column slides}
+
+% Normal slide with items and aligned to top
 \section{LOREM IPSUM DOLOR SIT CONSECTETUER ADIPISCING}
 \begin{frame}[t]{\secname}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit.}
 	\begin{itemize}
@@ -158,7 +66,22 @@
 	\end{itemize}
 \end{frame}
 
-% slide split to half and aligned to top
+% Normal slide, aligned to top
+\begin{frame}[t]
+    \frametitle{LOREM IPSUM DOLOR SIT CONSECTETUER ADIPISCING}
+    \framesubtitle{Lorem ipsum dolor sit amet, consectetuer adipiscing elit.}
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+\end{frame}
+
+% Normal slide, vertically aligned to middle
+\begin{frame}
+    \frametitle{LOREM IPSUM DOLOR SIT CONSECTETUER ADIPISCING}
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+\end{frame}
+
+\transition{Two-column slides}
+
+% Slide split to half and aligned to top
 \begin{frame}[t]{\secname}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit.}
     \begin{minipage}[t]{0.49\textwidth}
         \begin{itemize}
@@ -185,7 +108,7 @@
     \end{minipage}
 \end{frame}
 
-% split subtitle and slide to half and align to top
+% Split subtitle and slide to half and align to top
 \begin{frame}[t]{\secname}{
     \begin{minipage}[t]{0.47\textwidth}
         Lorem ipsum dolor sit sder amet
@@ -221,24 +144,7 @@
     \end{minipage}
 \end{frame}
 
-% normal slide, aligned to top
-\begin{frame}[t]
-    \frametitle{LOREM IPSUM DOLOR SIT CONSECTETUER ADIPISCING}
-    \framesubtitle{Lorem ipsum dolor sit amet, consectetuer adipiscing elit.}
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-\end{frame}
-
-% normal slide, vertically aligned to middle
-\begin{frame}
-    \frametitle{LOREM IPSUM DOLOR SIT CONSECTETUER ADIPISCING}
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Last page, it is also defined by template
-% our style always setup background of last page !
-
+% Last page is also defined by template
 \begin{frame}
    \usebeamertemplate{last page}
 \end{frame}
