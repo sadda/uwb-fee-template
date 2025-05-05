@@ -33,32 +33,12 @@
 \setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
 
 % this is item mark for itemize block
-\def\itemmark{
-    \tikz{
-        \def\width{0.12}
-        \def\height{0.3}
-        \def\shift{0.03}
-        \draw[thick, draw=white, fill=fel_blue, yshift=0.12em] (-0.2em,0) --++ (\width,\shift) --++ (0,\height + \shift) --++ (-\width,-\shift) -- cycle;
-    }
-}
-
-% define beamer templates for item bullets
-\defbeamertemplate{itemize item}{ii}{\tikz{
-    \itemmark
-}}
-
-\defbeamertemplate{itemize subitem}{iii}{\tikz{
-    \itemmark
-}}
-
-\defbeamertemplate{itemize subsubitem}{iiii}{\tikz{
-    \itemmark
-}}
-
-% use a new defined item bullets
-\setbeamertemplate{itemize item}[ii]
-\setbeamertemplate{itemize subitem}[iii]
-\setbeamertemplate{itemize subsubitem}[iiii]
+\setbeamercolor{itemize item}{fg=fel_blue}
+\setbeamercolor{itemize subitem}{fg=fel_blue}
+\setbeamercolor{itemize subsubitem}{fg=fel_blue}
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subsubitem}[circle]
 
 % set indent of each itemize level
 \setbeamertemplate{itemize/enumerate body begin}{\setlength{\leftmargini}{0.3cm}}
