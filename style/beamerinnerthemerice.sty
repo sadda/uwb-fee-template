@@ -34,7 +34,7 @@
     \advance\@tempdima by\beamer@leftmargin%
     \advance\@tempdima by\beamer@rightmargin%
     % insert title and subtitle
-    \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
+    \begin{beamercolorbox}[sep=0.07\paperwidth,#1,wd=\the\@tempdima,leftskip=0.007\paperwidth]{frametitle}
         \usebeamerfont{frametitle}%
         \strut\insertframetitle\vskip-1ex\strut\par%
         {%
@@ -59,18 +59,15 @@
   	\advance\@tempdima by\beamer@rightmargin%
 	\leavevmode
 
-        \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
+        \vspace{0.1\paperheight}
+        \begin{beamercolorbox}[sep=0.078\paperwidth,#1,wd=\the\@tempdima]{frametitle}
            {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
- 		\end{beamercolorbox}
-
-        \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
+        \vspace{0.03\paperheight}
   		\ifx\insertsubtitle\@empty%
             \else%
             {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
         \fi%
- 		\end{beamercolorbox}
-
-        \begin{beamercolorbox}[sep=5.5mm,#1,wd=\the\@tempdima]{frametitle}
+        \vspace{0.07\paperheight}
 		{\usebeamerfont{author}\usebeamercolor[fg]{author}{\insertauthor\par} {\vardate\par}}
 	\end{beamercolorbox}
 }
