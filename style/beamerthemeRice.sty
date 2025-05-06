@@ -8,7 +8,7 @@
 \usepackage{./style/beamercolorthemerice}
 
 % setup page margins
-\setbeamersize{text margin left=0.077\paperwidth, text margin right=1em}
+\setbeamersize{text margin left=0.077\paperwidth, text margin right=0.077\paperwidth}
 \setbeamersize{sidebar width right=1em}
 
 % load proper backgrounds first/normal/last pages for presentation CS/EN and FEL/RICE
@@ -50,7 +50,6 @@
         \begin{tikzpicture}[overlay, remember picture, shift={(current page.south west)}]
         \draw [fill=fel_blue] (0,0) -- (0, \paperheight) -- (\paperwidth, \paperheight) -- (\paperwidth, 0) -- (0,0);
         \end{tikzpicture}
-        \centering
         \Huge{\usebeamerfont{author}\usebeamercolor[fg]{transition}\textbf{\uppercase{#1}}}
     \end{frame}
     }        

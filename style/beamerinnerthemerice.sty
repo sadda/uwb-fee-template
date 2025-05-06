@@ -82,25 +82,21 @@
     \advance\@tempdima by\beamer@rightmargin%
     \leavevmode
 
-    \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
+    \vspace{0.1\textheight}
+    \begin{beamercolorbox}[sep=0.077\paperwidth,#1,wd=\the\@tempdima]{frametitle}
         % fixed first empty point
-        {\usebeamerfont{titlelast}{\usebeamercolor[fg]{title}\inserttitle}\par}
-    \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=7mm,#1,wd=\the\@tempdima]{frametitle}
         {\usebeamerfont{thanks}\usebeamercolor[fg]{subtitle}
                 \ifdef{\cslang}{Děkuji za pozornost}{Thank you for your attention}\par}%
 
-        \vspace{1ex}
+        \vspace{0.02\textheight}
         {\usebeamerfont{authorlast}\usebeamercolor[fg]{author}\insertauthor\par}%
-    \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=7mm,ht=0.32\paperheight,#1,wd=\the\@tempdima]{frametitle}
-        {\usebeamerfont{datalast}\usebeamercolor[fg]{author}\varphone\par}%
-
-        \vspace{0.25ex}
+ 
+        \vspace{0.19\textheight}
         {\usebeamerfont{datalast}\usebeamercolor[fg]{author}\varmail\par}%
-
         \vspace{0.25ex}
         {\usebeamerfont{datalast}\usebeamercolor[fg]{author}\varweb\par}%
+        \vspace{0.25ex}
+        {\usebeamerfont{datalast}\usebeamercolor[fg]{author}\varphone\par}%
 
     \end{beamercolorbox}
 }
