@@ -48,7 +48,7 @@
 \newcommand{\transition}[1]{
     \begin{frame}
         \begin{tikzpicture}[overlay, remember picture, shift={(current page.south west)}]
-        \draw [fill=fel_blue] (0,0) -- (0, \paperheight) -- (\paperwidth, \paperheight) -- (\paperwidth, 0) -- (0,0);
+        \draw [fel_blue, fill=fel_blue] (0,0) -- (0, \paperheight) -- (\paperwidth, \paperheight) -- (\paperwidth, 0) -- (0,0);
         \end{tikzpicture}
         \Huge{\usebeamerfont{author}\usebeamercolor[fg]{transition}\textbf{\uppercase{#1}}}
     \end{frame}
