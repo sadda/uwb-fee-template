@@ -18,7 +18,7 @@ This is the official Latex presentation template for the [Faculty of Electrical 
 There are two possibilities of using this template:
 
 - Download this repo and modify the `main.tex` file.
-- Open the project on [Overleaf](https://www.overleaf.com/read/mqszxcxvgjcj#620afc) and [create a copy](https://www.overleaf.com/learn/how-to/Copying_a_project) of it.
+- Open the project on [Overleaf](https://www.overleaf.com/read/mqszxcxvgjcj#620afc) and [create a copy](https://www.overleaf.com/learn/how-to/Copying_a_project) of it (click `Menu -> Create a copy` when logged in).
 
 # Latex parameters
 
