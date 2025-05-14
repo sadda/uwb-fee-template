@@ -1,0 +1,86 @@
+% !TeX program = pdflatex
+% !TEX encoding = UTF-8
+
+\documentclass[11pt, aspectratio=169]{beamer}
+
+\usepackage[sfdefault]{roboto}
+\usepackage[T1]{fontenc}
+\usepackage[czech, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=fel_blue}
+
+% Uncomment to use Czech/English in slide backgrounds
+\def\cslang{}
+
+% Uncomment to use FEL/RICE background
+%\def\ricemode{}
+
+% Uncomment to remove the bottom-left FEL text
+%\def\nologo{}
+
+\mode<presentation>{\usepackage{./style/beamerthemeRice}}
+\setbeamertemplate{navigation symbols}{}
+
+% Setup metadata, all but title and author may be commented out
+\title[]{Západočeská Univerzita v Plzni \\ Fakulta Elektrotechnická}
+\author{Lukáš Adam}
+\date{14. 5. 2025}
+\subtitle{Návod pro šablonu prezentace v Latexu}
+\mail{adamluk3@fel.zcu.cz}
+%\phone{+420 000 000 000}
+%\web{www.myweb.com}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Here you can start write your presentation
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+
+\begin{frame}
+	\maketitle
+\end{frame}
+
+
+
+\begin{frame}{Instalace + Návrhy vylepšení}
+Existují dvě možnosti instalace šablony:
+\begin{itemize}
+\item Stáhnout template na \href{https://github.com/sadda/uwb-fee-template}{Github} stránkách.
+\item Otevřít si projekt v \href{https://www.overleaf.com/read/mqszxcxvgjcj\#620afc}{Overleafu} a projekt zkopírovat (Menu $\rightarrow$ Create a copy).
+\end{itemize}
+V obou případech se edituje soubor \texttt{main.tex}.
+
+\vspace{5mm}
+
+Pro dotazy použijte diskuzní fórum na výše zmíněném Github úložišti. Pro reportování chyb nebo zlepšení funkčnosti šablony založte issue nebo pull request tamtéž.
+\end{frame}
+
+
+
+\begin{frame}{Použití šablony}
+Šablona je dokumentována přímo v \texttt{main.tex} souboru. Šablona obsahuje tři parametry, která mohou být od- nebo zakomentovány.
+\begin{itemize}
+\item cslang (defaultně vypnuto): Ukazuje titulní a závěrečnou stranu v angličtině. Při zapnutí je ukazuje v češtině.
+\item ricemode (defaultně vypnuto): Ukazuje titulní a závěrečnou stranu s obrázkem FEL. Při zapnutí ukazuje obrázek RICE.
+\item nologo (defaultně vypnuto): Ukazuje logo na levé dolní části každého slidu. Při zapnutí je logo vypnuto.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+   \usebeamertemplate{last page}
+\end{frame}
+
+
+
+\end{document}
+
+
