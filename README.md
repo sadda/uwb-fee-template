@@ -7,11 +7,9 @@
   <a href="https://github.com/sadda/uwb-fee-template/watchers"><img src="https://img.shields.io/github/watchers/sadda/uwb-fee-template" alt="GitHub watchers"></a>
 </p>
 
-<p align="center">
-<a href="https://www.fel.zcu.cz/en/"><img src="https://github.com/sadda/uwb-fee-template/raw/main/docs/resources/uwb_fee_logo.png" alt="University of West Bohemia" width="300"></a>
-</p>
-
 This is the official Latex presentation template for the [Faculty of Electrical Engineering](https://www.fel.zcu.cz/en/) of the University of West Bohemia.
+
+![](docs/resources/title_page.png)
 
 # Download
 
