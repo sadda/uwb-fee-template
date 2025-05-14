@@ -8,22 +8,22 @@
 </p>
 
 <p align="center">
-<img src="https://github.com/sadda/uwb-fee-template/raw/main/docs/resources/uwb_fee_logo.png" alt="University of West Bohemia" width="300">
+<a href="https://www.fel.zcu.cz/en/"><img src="https://github.com/sadda/uwb-fee-template/raw/main/docs/resources/uwb_fee_logo.png" alt="University of West Bohemia" width="300"></a>
 </p>
 
 This is the official Latex presentation template for the [Faculty of Electrical Engineering](https://www.fel.zcu.cz/en/) of the University of West Bohemia.
 
-# Usage
+# Download
 
-There are two possibilities of using the template:
+There are two possibilities of using this template:
 
-- Download this repo and modify the main file.
+- Download this repo and modify the `main.tex` file.
 - Open the project on [Overleaf](https://www.overleaf.com/read/mqszxcxvgjcj#620afc) and [create a copy](https://www.overleaf.com/learn/how-to/Copying_a_project) of it.
 
-# Parameters
+# Latex parameters
 
-There are three parameters:
+There are three parameters in the `main.tex` file:
 
-- cslang (default off): Shows the presentation in English, after uncommenting, it changes the language to Czech.
-- ricemode (default off): Shows the image presentation in English, after uncommenting, it changes the language to Czech.
-- nologo (default off): Shows the presentation in English, after uncommenting, it changes the language to Czech.
+- cslang (default off): Shows the presentation in English. When uncommented, it changes the language to Czech.
+- ricemode (default off): Shows the images of the Faculty of Electrical Enginnering. When uncommented, it changes the image of [RICE](https://www.rice.zcu.cz/en/).
+- nologo (default off): Shows the logo at the bottom left corner. When uncommented, it removes it.
